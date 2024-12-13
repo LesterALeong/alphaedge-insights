@@ -1,156 +1,347 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlphaEdge Insights</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-
-        header {
-            background: #0a3d62;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            background: #1e5a89;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            display: block;
-        }
-
-        nav a:hover {
-            background: #0a3d62;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 1rem;
-        }
-
-        .intro {
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .card {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin: 1rem 0;
-            overflow: hidden;
-        }
-
-        .card h3 {
-            background: #0a3d62;
-            color: white;
-            padding: 0.5rem;
-            margin: 0;
-        }
-
-        .card p {
-            padding: 1rem;
-        }
-
-        footer {
-            background: #0a3d62;
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
-        }
-
-        @media (min-width: 768px) {
-            .grid {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-    </style>
+    <meta name="description" content="AlphaEdge Insights - In-depth value investing analyses and expert stock reports">
+    <title>AlphaEdge Insights - Value Investing Analysis</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>AlphaEdge Insights</h1>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html">AlphaEdge Insights</a>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="analysis.html">Analysis</a></li>
+                <li><a href="education.html">Education</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Reports</a>
-        <a href="#">Learning</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-    </nav>
-
-    <div class="container">
-        <section class="intro">
-            <h2>Welcome to AlphaEdge Insights</h2>
-            <p>Your trusted source for in-depth value investing analyses and expert stock reports.</p>
-        </section>
-
-        <section class="grid">
-            <div class="card">
-                <h3>Featured Report: Tech Innovators</h3>
-                <p>Explore our latest analysis on groundbreaking technology companies reshaping the future.</p>
-            </div>
-
-            <div class="card">
-                <h3>Value Picks of the Month</h3>
-                <p>Discover undervalued gems with strong growth potential in this month's spotlight.</p>
-            </div>
-
-            <div class="card">
-                <h3>Beginner's Corner</h3>
-                <p>Learn how to evaluate companies with our step-by-step guides on financial analysis.</p>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Value Investing Insights</h1>
+                <p>Deep analysis. Better decisions. Superior returns.</p>
+                <div class="hero-quote">
+                    <blockquote>
+                        "It's far better to buy a wonderful company at a fair price than a fair company at a wonderful price."
+                        <footer>- Warren Buffett</footer>
+                    </blockquote>
+                </div>
             </div>
         </section>
-    </div>
 
-    <footer>
-        <p>&copy; 2024 AlphaEdge Insights. All Rights Reserved.</p>
+        <section class="featured-reports">
+            <h2>Latest Analysis</h2>
+            <div class="report-grid">
+                <article class="report-card">
+                    <div class="report-content">
+                        <h3>Apple Inc. (AAPL)</h3>
+                        <p>Deep dive into Apple's services ecosystem and its impact on future growth.</p>
+                        <div class="report-meta">
+                            <span>Published: Dec 10, 2024</span>
+                            <a href="#" class="read-more">Read Analysis →</a>
+                        </div>
+                    </div>
+                </article>
+                <!-- More report cards -->
+            </div>
+        </section>
+
+        <section class="value-proposition">
+            <div class="value-grid">
+                <div class="value-item">
+                    <h3>Deep Analysis</h3>
+                    <p>Comprehensive research on company fundamentals, competitive advantages, and growth prospects.</p>
+                </div>
+                <div class="value-item">
+                    <h3>Educational Resources</h3>
+                    <p>Learn value investing principles and develop your analytical skills.</p>
+                </div>
+                <div class="value-item">
+                    <h3>Expert Insights</h3>
+                    <p>Benefit from years of market experience and proven investment strategies.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>AlphaEdge Insights</h4>
+                <p>In-depth value investing analyses and expert stock reports</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 AlphaEdge Insights. All rights reserved.</p>
+        </div>
     </footer>
 
-    <script>
-        // JavaScript functionality to add interactivity
-        document.addEventListener('DOMContentLoaded', () => {
-            const cards = document.querySelectorAll('.card');
-
-            cards.forEach(card => {
-                card.addEventListener('click', () => {
-                    alert(`You clicked on: ${card.querySelector('h3').innerText}`);
-                });
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
+
+/* styles.css */
+:root {
+    --primary-color: #1a365d;
+    --secondary-color: #2c5282;
+    --accent-color: #4299e1;
+    --text-color: #2d3748;
+    --background-color: #f7fafc;
+    --card-background: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.header {
+    background-color: var(--primary-color);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.mobile-menu-btn {
+    display: none;
+}
+
+.hero {
+    padding: 8rem 2rem 4rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-quote {
+    margin-top: 2rem;
+    font-style: italic;
+}
+
+.featured-reports {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.report-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.report-card {
+    background: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.report-card:hover {
+    transform: translateY(-5px);
+}
+
+.report-content {
+    padding: 1.5rem;
+}
+
+.report-meta {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.read-more {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.value-proposition {
+    background-color: white;
+    padding: 4rem 2rem;
+}
+
+.value-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.value-item {
+    text-align: center;
+    padding: 2rem;
+}
+
+.footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 3rem 2rem 1rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .mobile-menu-btn span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+        transition: 0.3s;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--primary-color);
+        flex-direction: column;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+
+// script.js
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+    
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const spans = menuBtn.getElementsByTagName('span');
+    
+    if (navLinks.classList.contains('active')) {
+        spans[0].style.transform = 'rotate(-45deg) translate(-5px, 6px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(45deg) translate(-5px, -6px)';
+    } else {
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+    }
+}
+
+// Add smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
