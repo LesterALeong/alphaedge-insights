@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlphaEdge Insights</title>
+    <title>AlphaEdge Insights - Reports</title>
     <style>
         * {
             margin: 0;
@@ -52,12 +52,7 @@
             padding: 1rem;
         }
 
-        .intro {
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .card {
+        .report {
             background: white;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -65,14 +60,14 @@
             overflow: hidden;
         }
 
-        .card h3 {
+        .report h2 {
             background: #0a3d62;
             color: white;
             padding: 0.5rem;
             margin: 0;
         }
 
-        .card p {
+        .report p {
             padding: 1rem;
         }
 
@@ -83,25 +78,11 @@
             padding: 1rem 0;
             margin-top: 2rem;
         }
-
-        @media (min-width: 768px) {
-            .grid {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
     </style>
 </head>
 <body>
     <header>
-        <h1>AlphaEdge Insights</h1>
+        <h1>AlphaEdge Insights - Reports</h1>
     </header>
 
     <nav>
@@ -113,44 +94,29 @@
     </nav>
 
     <div class="container">
-        <section class="intro">
-            <h2>Welcome to AlphaEdge Insights</h2>
-            <p>Your trusted source for in-depth value investing analyses and expert stock reports.</p>
-        </section>
+        <div class="report">
+            <h2>Tech Innovators</h2>
+            <p>An in-depth analysis of companies leading the charge in technology innovation. Learn why these firms are poised for growth and their potential risks.</p>
+        </div>
 
-        <section class="grid">
-            <div class="card">
-                <h3>Featured Report: Tech Innovators</h3>
-                <p>Explore our latest analysis on groundbreaking technology companies reshaping the future.</p>
-            </div>
+        <div class="report">
+            <h2>Undervalued Retail Giants</h2>
+            <p>Discover retail companies trading at a discount despite strong fundamentals and a resilient business model.</p>
+        </div>
 
-            <div class="card">
-                <h3><a href="reports.html" style="color: white; text-decoration: none;">Value Picks of the Month</a></h3>
-                <p>Discover undervalued gems with strong growth potential in this month's spotlight.</p>
-            </div>
+        <div class="report">
+            <h2>Green Energy Leaders</h2>
+            <p>A close look at the top players in renewable energy, including their competitive advantages and financial health.</p>
+        </div>
 
-            <div class="card">
-                <h3>Beginner's Corner</h3>
-                <p>Learn how to evaluate companies with our step-by-step guides on financial analysis.</p>
-            </div>
-        </section>
+        <div class="report">
+            <h2>Healthcare Innovations</h2>
+            <p>Exploring groundbreaking advances in healthcare and the companies bringing these innovations to market.</p>
+        </div>
     </div>
 
     <footer>
         <p>&copy; 2024 AlphaEdge Insights. All Rights Reserved.</p>
     </footer>
-
-    <script>
-        // JavaScript functionality to add interactivity
-        document.addEventListener('DOMContentLoaded', () => {
-            const cards = document.querySelectorAll('.card');
-
-            cards.forEach(card => {
-                card.addEventListener('click', () => {
-                    alert(`You clicked on: ${card.querySelector('h3').innerText}`);
-                });
-            });
-        });
-    </script>
 </body>
 </html>
