@@ -141,7 +141,16 @@
     </footer>
 
     <script>
-        // Add interactivity 
+        // JavaScript functionality to add interactivity
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    alert(`You clicked on: ${card.querySelector('h3').innerText}`);
+                });
+            });
+        });
     </script>
 </body>
 </html>
