@@ -11,107 +11,107 @@
             box-sizing: border-box;
         }
 
-    body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        background-color: #f4f4f9;
-        color: #333;
-        transition: background-color 0.3s, color 0.3s;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
 
-    body.dark {
-        background-color: #333;
-        color: #f4f4f9;
-    }
+        body.dark {
+            background-color: #333;
+            color: #f4f4f9;
+        }
 
-    header {
-        background: #0a3d62;
-        color: #fff;
-        padding: 1rem 0;
-        text-align: center;
-    }
+        header {
+            background: #0a3d62;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
 
-    body.dark header {
-        background: #222;
-    }
+        body.dark header {
+            background: #222;
+        }
 
-    header h1 {
-        font-size: 2.5rem;
-    }
+        header h1 {
+            font-size: 2.5rem;
+        }
 
-    nav {
-        display: flex;
-        justify-content: center;
-        background: #1e5a89;
-    }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #1e5a89;
+        }
 
-    body.dark nav {
-        background: #444;
-    }
+        body.dark nav {
+            background: #444;
+        }
 
-    nav a {
-        color: white;
-        text-decoration: none;
-        padding: 0.75rem 1.5rem;
-        display: block;
-    }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            display: block;
+        }
 
-    nav a:hover {
-        background: #0a3d62;
-    }
+        nav a:hover {
+            background: #0a3d62;
+        }
 
-    body.dark nav a:hover {
-        background: #555;
-    }
+        body.dark nav a:hover {
+            background: #555;
+        }
 
-    .container {
-        max-width: 1200px;
-        margin: auto;
-        padding: 1rem;
-    }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 1rem;
+        }
 
-    .intro {
-        text-align: center;
-        margin: 2rem 0;
-    }
+        .intro {
+            text-align: center;
+            margin: 2rem 0;
+        }
 
-    #tradingview_chart {
-        width: 100%;
-        height: 800px;
-        margin: 2rem 0;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-    }
+        #tradingview_chart {
+            width: 100%;
+            height: 800px;
+            margin: 2rem 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
 
-    #themeToggle {
-        position: fixed;
-        top: 1rem;
-        right: 1rem;
-        background: #0a3d62;
-        color: white;
-        border: none;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
+        #themeToggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: #0a3d62;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
 
-    body.dark #themeToggle {
-        background: #555;
-    }
+        body.dark #themeToggle {
+            background: #555;
+        }
 
-    footer {
-        background: #0a3d62;
-        color: white;
-        text-align: center;
-        padding: 1rem 0;
-        margin-top: 2rem;
-    }
+        footer {
+            background: #0a3d62;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
 
-    body.dark footer {
-        background: #222;
-    }
-</style>
+        body.dark footer {
+            background: #222;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -157,6 +157,25 @@
 
     <script src="https://s3.tradingview.com/tv.js"></script>
     <script>
+        // On page load, set the theme based on localStorage
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark');
+            }
+        });
+
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+
+            // Save the current theme in localStorage
+            if (document.body.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
         new TradingView.widget({
             "container_id": "tradingview_chart",
             "autosize": true,
@@ -171,11 +190,6 @@
             "hide_side_toolbar": false,
             "allow_symbol_change": true,
             "details": true
-        });
-    
-        const themeToggle = document.getElementById('themeToggle');
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark');
         });
     </script>
 </body>
