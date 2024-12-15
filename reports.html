@@ -16,21 +16,12 @@
             line-height: 1.6;
             background-color: #f4f4f9;
             color: #333;
+            transition: background-color 0.3s, color 0.3s;
         }
 
-        .stock-widget {
-            background: white;
-            padding: 1rem;
-            border-radius: 8px;
-            margin: 1rem 0;
-            overflow: hidden;
-            width: 100%;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .tradingview-widget-container {
-            width: 100%;
-            min-height: 150px;
+        body.dark {
+            background-color: #333;
+            color: #f4f4f9;
         }
 
         header {
@@ -38,6 +29,10 @@
             color: #fff;
             padding: 1rem 0;
             text-align: center;
+        }
+
+        body.dark header {
+            background: #222;
         }
 
         header h1 {
@@ -50,6 +45,10 @@
             background: #1e5a89;
         }
 
+        body.dark nav {
+            background: #444;
+        }
+
         nav a {
             color: white;
             text-decoration: none;
@@ -59,6 +58,10 @@
 
         nav a:hover {
             background: #0a3d62;
+        }
+
+        body.dark nav a:hover {
+            background: #555;
         }
 
         .container {
@@ -75,6 +78,11 @@
             overflow: hidden;
         }
 
+        body.dark .report {
+            background: #444;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
         .report h2 {
             background: #0a3d62;
             color: white;
@@ -82,25 +90,13 @@
             margin: 0;
         }
 
+        body.dark .report h2 {
+            background: #222;
+        }
+
         .report p {
             padding: 1rem;
             margin-bottom: 0;
-        }
-
-        .report p:last-child {
-            margin-bottom: 1rem;
-        }
-
-        .report ul {
-            padding: 0 2rem 1rem 3rem;
-        }
-
-        .report li {
-            margin-bottom: 0.5rem;
-        }
-
-        .report strong {
-            color: #0a3d62;
         }
 
         footer {
@@ -110,7 +106,27 @@
             padding: 1rem 0;
             margin-top: 2rem;
         }
-        
+
+        body.dark footer {
+            background: #222;
+        }
+
+        #themeToggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: #0a3d62;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        body.dark #themeToggle {
+            background: #555;
+        }
     </style>
 </head>
 <body>
@@ -373,5 +389,24 @@
     <footer>
         <p>&copy; 2024 AlphaEdge Insights. All Rights Reserved.</p>
     </footer>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark');
+            }
+        });
+
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+
+            if (document.body.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
 </body>
 </html>
