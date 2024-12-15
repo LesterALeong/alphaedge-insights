@@ -208,7 +208,6 @@
     </footer>
 
     <script>
-        // On page load, set the theme based on localStorage
         document.addEventListener('DOMContentLoaded', () => {
             if (localStorage.getItem('theme') === 'dark') {
                 document.body.classList.add('dark');
@@ -219,7 +218,6 @@
         themeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark');
 
-            // Save the current theme in localStorage
             if (document.body.classList.contains('dark')) {
                 localStorage.setItem('theme', 'dark');
             } else {
