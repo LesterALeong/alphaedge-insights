@@ -6,12 +6,65 @@
     <title>AlphaEdge Insights - Learnings</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.dark {
+            background-color: #333;
+            color: #f4f4f9;
+        }
+
+        header {
+            background: #0a3d62;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        body.dark header {
+            background: #222;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #1e5a89;
+        }
+
+        body.dark nav {
+            background: #444;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            display: block;
+        }
+
+        nav a:hover {
+            background: #0a3d62;
+        }
+
+        body.dark nav a:hover {
+            background: #555;
+        }
+
         .quote {
             font-style: italic;
             border-left: 4px solid #0a3d62;
             padding-left: 1rem;
             margin: 1rem 0;
             color: #555;
+        }
+
+        body.dark .quote {
+            color: #bbb;
         }
 
         .quote span {
@@ -35,8 +88,46 @@
             padding: 1rem;
         }
 
+        body.dark .grid div {
+            background: #444;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
         .grid h3 {
             color: #0a3d62;
+        }
+
+        body.dark .grid h3 {
+            color: #ddd;
+        }
+
+        footer {
+            background: #0a3d62;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        body.dark footer {
+            background: #222;
+        }
+
+        #themeToggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: #0a3d62;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        body.dark #themeToggle {
+            background: #555;
         }
     </style>
 </head>
@@ -44,6 +135,8 @@
     <header>
         <h1>AlphaEdge Insights - Learnings</h1>
     </header>
+
+    <button id="themeToggle">Toggle Theme</button>
 
     <nav>
         <a href="index.html">Home</a>
@@ -113,5 +206,26 @@
     <footer>
         <p>&copy; 2024 AlphaEdge Insights. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        // On page load, set the theme based on localStorage
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark');
+            }
+        });
+
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+
+            // Save the current theme in localStorage
+            if (document.body.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
 </body>
 </html>
