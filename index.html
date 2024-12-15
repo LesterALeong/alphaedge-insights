@@ -117,74 +117,96 @@
         }
     </style>
 </head>
-<body>
-    <header>
-        <h1>AlphaEdge Insights</h1>
-    </header>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f4f4f9;
+        color: #333;
+        transition: background-color 0.3s, color 0.3s;
+    }
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="reports.html">Reports</a>
-        <a href="learning.html">Learning</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-    </nav>
+    body.dark {
+        background-color: #333;
+        color: #f4f4f9;
+    }
 
-    <div class="container">
-        <section class="intro">
-            <h2>Welcome to AlphaEdge Insights</h2>
-            <p>Your trusted source for in-depth value investing analyses and expert stock reports.</p>
-        </section>
+    header {
+        background: #0a3d62;
+        color: #fff;
+        padding: 1rem 0;
+        text-align: center;
+    }
 
-        <section>
-            <div class="tradingview-widget-container">
-                <div id="tradingview_chart"></div>
-            </div>
-        </section>
+    body.dark header {
+        background: #222;
+    }
 
-        <section class="grid">
-            <div class="card">
-                <h3>Featured Report: Tech Innovators</h3>
-                <p>Explore our latest analysis on groundbreaking technology companies reshaping the future.</p>
-            </div>
+    header h1 {
+        font-size: 2.5rem;
+    }
 
-            <div class="card">
-                <h3><a href="reports.html" style="color: white; text-decoration: none;">Value Picks of the Month</a></h3>
-                <p>Discover undervalued gems with strong growth potential in this month's spotlight.</p>
-            </div>
+    nav {
+        display: flex;
+        justify-content: center;
+        background: #1e5a89;
+    }
 
-            <div class="card">
-                <h3>Beginner's Corner</h3>
-                <p>Learn how to evaluate companies with our step-by-step guides on financial analysis.</p>
-            </div>
-        </section>
-    </div>
+    body.dark nav {
+        background: #444;
+    }
 
-    <footer>
-        <p>&copy; 2024 AlphaEdge Insights. All Rights Reserved.</p>
-    </footer>
+    nav a {
+        color: white;
+        text-decoration: none;
+        padding: 0.75rem 1.5rem;
+        display: block;
+    }
 
-    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-    <script type="text/javascript">
-        new TradingView.widget({
-            "container_id": "tradingview_chart",
-            "autosize": true,
-            "symbol": "SPY",
-            "interval": "D",
-            "timezone": "Etc/UTC",
-            "theme": "light",
-            "style": "1",
-            "locale": "en",
-            "toolbar_bg": "#f1f3f6",
-            "enable_publishing": false,
-            "hide_side_toolbar": false,
-            "allow_symbol_change": true,
-            "details": true
-        });
-    </script>
+    nav a:hover {
+        background: #0a3d62;
+    }
 
-    <script>
-        // Need a better javascript
-    </script>
-</body>
-</html>
+    body.dark nav a:hover {
+        background: #555;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 1rem;
+    }
+
+    .intro {
+        text-align: center;
+        margin: 2rem 0;
+    }
+
+    #themeToggle {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        background: #0a3d62;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    body.dark #themeToggle {
+        background: #555;
+    }
+
+    footer {
+        background: #0a3d62;
+        color: white;
+        text-align: center;
+        padding: 1rem 0;
+        margin-top: 2rem;
+    }
+
+    body.dark footer {
+        background: #222;
+    }
+</style>
